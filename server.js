@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/github/*', proxyGitHub);
 
-proxyGitHub => (req,res) {
+function proxyGitHub(req,res) {
   console.log('routing a github request for', req.params[0]);
   (requestProxy({
     url: `https://api.github.com/${req.params[0]}`,
